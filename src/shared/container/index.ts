@@ -11,6 +11,9 @@ import UserTokensRepository from '@modules/users/infra/typeorm/repositories/User
 import IBooksRepository from '@modules/books/repositories/IBooksRepository';
 import BooksRepository from '@modules/books/infra/typeorm/repositories/BooksRepository';
 
+import IBookTransactionRepository from '@modules/books/repositories/IBookTransactionRepository';
+import BookTransactionRepository from '@modules/books/infra/typeorm/repositories/BookTransactionRepository';
+
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
   UsersRepository,
@@ -24,4 +27,9 @@ container.registerSingleton<IUserTokensRepository>(
 container.registerSingleton<IBooksRepository>(
   'BooksRepository',
   BooksRepository,
+);
+
+container.registerSingleton<IBookTransactionRepository>(
+  'BookTransactionRepository',
+  BookTransactionRepository,
 );

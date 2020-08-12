@@ -5,6 +5,7 @@ import IBooksRepository from '@modules/books/repositories/IBooksRepository';
 import ICreateBookDTO from '@modules/books/dtos/ICreateBookDTO';
 
 import Book from '../entities/Book';
+import IFindBookByUserDTO from '@modules/books/dtos/IFindBookByUserDTO';
 
 class BooksRepository implements IBooksRepository {
   private ormRepository: Repository<Book>;

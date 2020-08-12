@@ -6,7 +6,7 @@ import ICreateBookDTO from '@modules/books/dtos/ICreateBookDTO';
 
 import Book from '../../infra/typeorm/entities/Book';
 
-class BooksRepository implements IBooksRepository {
+class FakeBooksRepository implements IBooksRepository {
   private books: Book[] = [];
 
   public async create({ name, user_id }: ICreateBookDTO): Promise<Book> {
@@ -20,4 +20,4 @@ class BooksRepository implements IBooksRepository {
   }
 }
 
-export default BooksRepository;
+export default FakeBooksRepository;
