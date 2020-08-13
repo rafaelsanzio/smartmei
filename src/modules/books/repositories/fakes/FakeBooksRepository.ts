@@ -18,6 +18,12 @@ class FakeBooksRepository implements IBooksRepository {
 
     return book;
   }
+
+  public async findById(id: string): Promise<Book | undefined> {
+    const findBook = this.books.find(book => book.id === id);
+
+    return findBook;
+  }
 }
 
 export default FakeBooksRepository;

@@ -24,6 +24,12 @@ class BooksRepository implements IBooksRepository {
 
     return book;
   }
+
+  public async findById(id: string): Promise<Book | undefined> {
+    const book = await this.ormRepository.findOne(id);
+
+    return book;
+  }
 }
 
 export default BooksRepository;

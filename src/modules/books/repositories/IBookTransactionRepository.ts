@@ -10,4 +10,5 @@ export default interface IBookTransactionRepository {
   ): Promise<BookTransaction | undefined>;
   update(id: string): Promise<BookTransaction | undefined>;
   findById(id: string): Promise<BookTransaction | undefined>;
+  findBookTransactionsByUserID(user_id: string): Promise<BookTransaction[]>;
 }

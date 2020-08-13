@@ -23,7 +23,7 @@ export default class BookTransactionController {
   }
 
   public async update(request: Request, response: Response): Promise<Response> {
-    const id = request.query.id;
+    const id = request.params.id;
 
     const updateBookTransaction = container.resolve(
       UpdateBookTransactionService,

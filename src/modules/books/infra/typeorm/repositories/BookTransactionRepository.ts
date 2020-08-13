@@ -42,15 +42,24 @@ class BookTransactionRepository implements IBookTransactionRepository {
   }
 
   public async update(id: string): Promise<BookTransaction | undefined> {
-    this.ormRepository.update(id, { is_return: true });
+    await this.ormRepository.update({ id }, { is_return: true });
 
-    const bookTransaction = this.ormRepository.findOne({ id });
-
+    const bookTransaction = await this.ormRepository.findOne({ id });
     return bookTransaction;
   }
 
   public async findById(id: string): Promise<BookTransaction | undefined> {
     const bookTransaction = await this.ormRepository.findOne(id);
+
+    return bookTransaction;
+  }
+
+  public async findBookTransactionsByUserID(
+    user_id: string,
+  ): Promise<BookTransaction[]> {
+    const bookTransaction = await this.ormRepository.find({
+      from_user_id: user_id,
+    });
 
     return bookTransaction;
   }

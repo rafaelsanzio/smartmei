@@ -62,6 +62,16 @@ class FakeBookTransactionRepository implements IBookTransactionRepository {
 
     return findBookTransaction;
   }
+
+  public async findBookTransactionsByUserID(
+    user_id: string,
+  ): Promise<BookTransaction[]> {
+    const bookTransactions = this.booksTransaction.filter(
+      bookTransaction => bookTransaction.from_user_id === user_id,
+    );
+
+    return bookTransactions;
+  }
 }
 
 export default FakeBookTransactionRepository;

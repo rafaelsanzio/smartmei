@@ -29,18 +29,14 @@ describe('Update Book Transaction', () => {
       to_user_id: 'to_user_id',
     });
 
-    const returnBook = await updateBookTransaction.execute({
-      id: bookTransaction.id,
-    });
+    const returnBook = await updateBookTransaction.execute(bookTransaction.id);
 
     expect(returnBook?.is_return).toBe(true);
   });
 
   it('should not be able to return a book for a non-exist transaction', async () => {
     await expect(
-      updateBookTransaction.execute({
-        id: 'non-exists-transaction',
-      }),
+      updateBookTransaction.execute('non-exists-transaction'),
     ).rejects.toBeInstanceOf(AppError);
   });
 
