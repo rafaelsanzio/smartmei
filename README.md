@@ -16,7 +16,7 @@
 
 ## 🔖 Sobre o projeto 
 
-O projeto **API de empréstimos de livros** desenvolvido para teste de programador [SmartMEI](https://www.smartmei.com.br/ "SmartMEI"), tendo como objetivo construir um serviço para empréstimos de livros.
+O projeto **API de empréstimos de livros**, tendo como objetivo construir um serviço para empréstimos de livros.
 
 - **Features** 
   - Cadastro de Usuário - ✅
